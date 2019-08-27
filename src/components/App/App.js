@@ -11,32 +11,32 @@ class App extends React.Component {
       constructor(props){
         super(props);
         this.state = {
-          searchResults: {
-          track1: {
+          searchResults: [
+          {
               name: "Whiskey and You",
               artist: 'Chris Stapelton',
               album: 'Traveler',
               id: '0897234'
           },
-          track2: {
+          {
               name: "Something Like Olivia",
               artist: 'John Mayer',
               album: 'Born and Raised',
               id: '2348'
           },
-          track3: {
+          {
               name: "Summertime Romance",
               artist: 'JohnnySwim',
               album: 'Georgica Pond',
               id: '2347980459'
           },
-          track4: {
+          {
               name: "Black Dog",
               artist: 'Led Zeppelin',
               album: 'Led Zeppelin IV',
               id: '3458906'
           }
-        }
+        ]
         };
       }
 
