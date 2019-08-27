@@ -5,18 +5,18 @@ import './Track.css';
 class Track extends React.Component {
       renderAction() {
         if(this.props.isRemoval === true){
-          return <button class="Track-action">-</button>;
+          return <button className="Track-action">-</button>;
         }else{
-          return <button class="Track-action">+</button>;
+          return <button className="Track-action">+</button>;
         }
 
       }
       render(){
          return (
-           <div class="Track">
-             <div class="Track-information">
+           <div className="Track">
+             <div className="Track-information">
                <h3>{this.props.name}</h3>
-               <p>{this.props.artist} | {this.props.artist}</p>
+               <p>{this.props.artist} | {this.props.album}</p>
              </div>
              //button
            </div>
