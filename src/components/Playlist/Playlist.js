@@ -1,26 +1,17 @@
 import React from 'react';
 import Track from '../Track/Track';
+import TrackList from '../TrackList/TrackList';
 import './Playlist.css';
 
 
 class Playlist extends React.Component {
 
-      renderTracks(playlistTracks){
-        const tracks = [];
-        tracks.push(
-          playlistTracks.map(playlistTrack=>{
-            const track = playlistTrack;
-            return <Track name={track.name} artist={track.artist} album={track.album} key={track.id} />
-          })
-        );
-        return tracks;
-      }
-
       render(){
          return (
            <div className="Playlist">
              <input value={this.props.playlistName}/>
-             {this.renderTracks(this.props.playlistTracks)}
+
+             <TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={this.props.isRemoval}/>
              <button className="Playlist-save">SAVE TO SPOTIFY</button>
            </div>
          );

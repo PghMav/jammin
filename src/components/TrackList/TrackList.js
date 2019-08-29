@@ -5,15 +5,14 @@ import './TrackList.css';
 
 class TrackList extends React.Component {
 
-    renderTracks(searchResults){
-      const tracks = []
+    renderTracks(tracks){
+      const tracklist = [];
 
-      tracks.push(searchResults.map(track=>{
+      tracklist.push(tracks.map(track=>{
 
-        return <Track name={track.name} artist={track.artist} album={track.album} key={track.id} />;
+      return <Track track={track} onAdd={this.props.onAdd} onRemove={this.props.onRemove} key={track.id} isRemoval={this.props.isRemoval}/>
       }))
-      return tracks;
-
+      return tracklist;
 
   }
 
@@ -22,12 +21,7 @@ class TrackList extends React.Component {
       render(){
          return (
            <div className="TrackList">
-            {this.renderTracks(this.props.searchResults)}
-          
-            <Track name={'Moon River'} artist={'Audrey Hepburn'} album={'Funny Face'} key={6} />
-            <Track name={'Hey Ya'} artist={'OutKast'} album={'Speakerboxxx'} key={2348} />
-            <Track name={'Even Flow'} artist={'Pearl Jam'} album={'Ten'} key={3892} />
-
+            {this.renderTracks(this.props.tracks)}
            </div>
 
          );
